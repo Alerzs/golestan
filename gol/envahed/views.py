@@ -6,6 +6,7 @@ from django.utils.decorators import method_decorator
 from django.views import View
 from forms import *
 from .models import *
+from django.http import HttpResponse
 
 
 class Chose_Dars(LoginRequiredMixin,View):
@@ -13,17 +14,13 @@ class Chose_Dars(LoginRequiredMixin,View):
         forms = DarsForm()
         return render (request,"",{"form":forms})
     def post(self,request):
-        forms = DarsForm(request.POST)
+        forms = IdDars(request.POST)
         if forms.is_valid():
             cd = forms.cleaned_data
-            forms.save()
             student = Student.objects.get(user = request.user)
-
-
-
-
-            
-            return render (request,"",{"form":forms})
+            student.dars(id = cd["id_dars"])
+            student.save()
+            return HttpResponse ("ok")
 
 
 
