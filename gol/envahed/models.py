@@ -7,13 +7,16 @@ from django.contrib.auth.models import User
 class Ostad(models.Model):
     user = models.OneToOneField(User , on_delete=models.CASCADE)
 
+
 class Dars(models.Model):
+    name = models.CharField(max_length=1000)
     vahed = models.IntegerField()
     ostad = models.ForeignKey(Ostad ,on_delete=models.CASCADE)
+    student = models.ManyToManyField(S)
     rooz = models.DateTimeField()
     cap = models.PositiveIntegerField()
     reshte = models.CharField(max_length=25)
-    
+
 
 class Student(models.Model):
     user = models.OneToOneField(User ,on_delete=models.CASCADE)
