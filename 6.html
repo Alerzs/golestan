@@ -102,40 +102,19 @@
                         <th>رشته</th>
                     </tr>
                 </thead>
+                {% for dars in dars %}
                 <tbody>
                     <tr>
                         <td><input type="checkbox" id="course1" name="course1"></td>
-                        <td>ریاضیات</td>
-                        <td>3</td>
-                        <td>40</td>
-                        <td>شنبه و سه‌شنبه</td>
-                        <td>مهندسی کامپیوتر</td>
+                        <td>{{dars.name}}</td>
+                        <td>{{dars.vahed}}</td>
+                        <td>{{dars.cap}}</td>
+                        <td>{{dars.rooz}}</td>
+                        <td>{{dars.reshte}}</td>
                     </tr>
-                    <tr>
-                        <td><input type="checkbox" id="course2" name="course2"></td>
-                        <td>فیزیک</td>
-                        <td>3</td>
-                        <td>35</td>
-                        <td>یکشنبه و چهارشنبه</td>
-                        <td>مهندسی برق</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" id="course3" name="course3"></td>
-                        <td>شیمی عمومی</td>
-                        <td>2</td>
-                        <td>30</td>
-                        <td>دوشنبه</td>
-                        <td>مهندسی شیمی</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" id="course4" name="course4"></td>
-                        <td>برنامه‌نویسی</td>
-                        <td>4</td>
-                        <td>50</td>
-                        <td>سه‌شنبه و پنج‌شنبه</td>
-                        <td>مهندسی کامپیوتر</td>
-                    </tr>
+                
                 </tbody>
+                {% endfor %}
             </table>
 
             <button type="submit">انتخاب دروس</button>
