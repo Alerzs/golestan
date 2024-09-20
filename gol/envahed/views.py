@@ -41,3 +41,7 @@ def delet_dars(request , dars_id):
             form.delete()
             return render(request,)
             
+def show_all_dars(request):
+    dars = Dars.objects.all()
+    return render(request , 'envahed/show_all_dars.html' , {'dars':dars})
+
