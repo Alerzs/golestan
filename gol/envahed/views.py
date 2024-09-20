@@ -30,3 +30,15 @@ def show_dars(request):
     return render(request , 'envahed/show_dars.html' , {'dars':my_dars})
 
  
+             return render(request, )
+
+
+@permission_classes([IsTeacher]) 
+def delet_dars(request , dars_id):
+    dars = Dars.objects.get(id=dars_id)
+    if request.method == 'DELETE':
+        form = DarsForm(request.POST , instance= dars)
+        if form.is_valid():
+            form.delete()
+            return render(request,)
+            
