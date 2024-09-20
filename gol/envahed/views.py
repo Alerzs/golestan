@@ -29,8 +29,7 @@ def show_dars(request):
     my_dars = my_sudent.dars.all()
     return render(request , 'envahed/show_dars.html' , {'dars':my_dars})
 
- 
-             return render(request, )
+
 
 
 @permission_classes([IsTeacher]) 
