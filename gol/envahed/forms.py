@@ -15,3 +15,7 @@ class StudentForm(forms.ModelForm):
     class Meta:
         model = Student
         fields ="__all__"
+
+
+class IdDars(forms.Form):
+    id_dars = forms.IntegerField()
