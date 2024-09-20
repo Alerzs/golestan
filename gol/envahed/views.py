@@ -17,7 +17,7 @@ from django.shortcuts import render
 @permission_classes([IsTeacher]) 
 def edit_dars(request , dars_id):
      dars = Dars.objects.get(id=dars_id)
-     if request.method == 'POST':
+     if request.method == 'POST' or request.method == 'PUT' or request.method == 'PATCH':
          form = DarsForm(request.POST , instance= dars)
          if form.is_valid():
              form.save()
