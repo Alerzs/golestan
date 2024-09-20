@@ -3,11 +3,14 @@ from django.contrib.auth import login
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-
-
-from django.shortcuts import render
 from .models import *
 from .forms import *
+from .permissions import *
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.response import Response
+from rest_framework import status
+
+@permission_classes([IsTeacher]) 
 def edit_dars(request , dars_id):
      dars = Dars.objects.get(id=dars_id)
      if request.method == 'POST':
