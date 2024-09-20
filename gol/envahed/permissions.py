@@ -4,7 +4,7 @@ from .models import *
 class IsStudent(BasePermission):
     def has_permission(self, request, view):
         student = Student.objects.get(user=request.user)
-        if :
+        if student:
             return True
         else:
             return False
