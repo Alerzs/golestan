@@ -17,7 +17,7 @@ def edit_dars(request , dars_id):
          form = DarsForm(request.POST , instance= dars)
          if form.is_valid():
              form.save()
-             return 
+             return render(request, )
 
 
 @permission_classes([IsTeacher]) 
@@ -27,4 +27,4 @@ def delet_dars(request , dars_id):
         form = DarsForm(request.POST , instance= dars)
         if form.is_valid():
             form.delete()
-            return
+            return render(request,)
