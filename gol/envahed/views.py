@@ -20,7 +20,7 @@ def edit_dars(request , dars_id):
              return 
 
 
-
+@permission_classes([IsTeacher]) 
 def delet_dars(request , dars_id):
     dars = Dars.objects.get(id=dars_id)
     if request.method == 'DELETE':
