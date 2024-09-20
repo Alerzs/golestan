@@ -47,11 +47,8 @@ def show_dars(request):
     my_dars = my_sudent.dars.all()
     return render(request , 'envahed/show_dars.html' , {'dars':my_dars})
 
-<<<<<<< HEAD
  
-=======
 
->>>>>>> 4f837f05757e9c14e346cffdaa18c4cc83fc149a
 
 
 @permission_classes([IsTeacher]) 
