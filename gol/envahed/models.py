@@ -12,7 +12,6 @@ class Dars(models.Model):
     name = models.CharField(max_length=1000)
     vahed = models.IntegerField()
     ostad = models.ForeignKey(Ostad ,on_delete=models.CASCADE)
-    student = models.ManyToManyField(S)
     rooz = models.DateTimeField()
     cap = models.PositiveIntegerField()
     reshte = models.CharField(max_length=25)

@@ -13,7 +13,7 @@ from .forms import OstadForm, DarsForm, StudentForm
 import requests
 from django.shortcuts import render
 from django.views import View
-from forms import *
+from .forms import *
 from .models import *
 from django.http import HttpResponse
 
