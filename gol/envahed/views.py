@@ -39,19 +39,15 @@ def edit_dars(request , dars_id):
          form = DarsForm(request.POST , instance= dars)
          if form.is_valid():
              form.save()
-             return render(request , 'envahed/edit_dars.html' , {'form':form})
+             return render(request , '1.html' , {'form':form})
 
 @permission_classes([IsStudent])
 def show_dars(request):
     my_sudent = Student.objects.get(user=request.user)
     my_dars = my_sudent.dars.all()
-    return render(request , 'envahed/show_dars.html' , {'dars':my_dars})
+    return render(request , '1.html' , {'dars':my_dars})
 
-<<<<<<< HEAD
- 
-=======
 
->>>>>>> 4f837f05757e9c14e346cffdaa18c4cc83fc149a
 
 
 @permission_classes([IsTeacher]) 
@@ -65,5 +61,5 @@ def delet_dars(request , dars_id):
             
 def show_all_dars(request):
     dars = Dars.objects.all()
-    return render(request , 'envahed/show_all_dars.html' , {'dars':dars})
+    return render(request , '2.html' , {'darss':dars})
 
